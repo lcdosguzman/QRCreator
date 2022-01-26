@@ -39,14 +39,10 @@
                 
             </div>
         </header>
-       
-       
         <script type="text/javascript">
-            // Genera el objeto qrcode
             var qrcode = new QRCode(document.getElementById("qrcode"), {
-                width : 250,
-                height : 250
-            });
+                width : 250, height : 250
+            });// Object 
             // Funcion para crear el codigo
             function makeCode () {
                 var elText = document.getElementById("text");
@@ -56,19 +52,17 @@
                 }
                 qrcode.makeCode(elText.value);
             }
-            // Al cargar crear el qr inicial
+            // Aqui se puede poner una imagen
             makeCode();
-            // Al pulsar teclar Enter, genera en QR
+
+            // Si pulsan Enter
             $("#text").
                 on("blur", function () {
-                    makeCode();
-                   
+                    makeCode();  
                 }).
                 on("keydown", function (e) {
                     if (e.keyCode == 13) {
-                        makeCode();
-                        
-                        
+                        makeCode();     
                     }
                 });
             </script>
